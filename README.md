@@ -32,49 +32,50 @@ The changes made were mostly to allow for a briefer appearance of basic items to
 
 ## Potions
 
-Health/Mana potions are enumerated with a "Minor Healing Potion" becoming a "H1" and a "Super Mana Potion" becoming a "M5". Rejuvenation potions are altered the same way, now being "R1" and "R2".
-
 ![Potion - Health](img/potion.health.jpg?raw=true "Health")
+Minor Healing Potion, Lesser Healing Potion, Healing Potion, Greater Healing Potion, Super Healing Potion
 
 ![Potion - Mana](img/potion.mana.jpg?raw=true "Mana")
+Minor Mana Potion, Lesser Mana Potion, Mana Potion, Greater Mana Potion, Super Mana Potion
 
 ![Potion - Rejuvention](img/potion.rejuv.jpg?raw=true "Rejuvention")
+Rejuvenation Potion, Full Rejuvenation Potion
 
 
 ## Gems
 
-Gems are enumerated from *Chipped Gem(1)* to *Perfect Gem(5)*.
-
 ![Gem - Amethyst](img/gem.amethyst.jpg?raw=true "Amethyst")
-Chipped Gem(1), Flawed Gem(2), Gem(3), Flawless Gem(4), Perfect Gem(5)
+Chipped Amethyst, Flawed Amethyst, Amethyst, Flawless Amethyst, Perfect Amethyst
 
 ![Gem - Diamond](img/gem.diamond.jpg?raw=true "Diamond")
-Chipped Gem(1), Flawed Gem(2), Gem(3), Flawless Gem(4), Perfect Gem(5)
+Chipped Diamond, Flawed Diamond, Diamond, Flawless Diamond, Perfect Diamond
 
 ![Gem - Emerald](img/gem.emerald.jpg?raw=true "Emerald")
-Chipped Gem(1), Flawed Gem(2), Gem(3), Flawless Gem(4), Perfect Gem(5)
+Chipped Emerald, Flawed Emerald, Emerald, Flawless Emerald, Perfect Emerald
+
 ![Gem - Ruby](img/gem.ruby.jpg?raw=true "Ruby")
-Chipped Gem(1), Flawed Gem(2), Gem(3), Flawless Gem(4), Perfect Gem(5)
+Chipped Ruby, Flawed Ruby, Ruby, Flawless Ruby, Perfect Ruby
+
 ![Gem - Sapphire](img/gem.sapphire.jpg?raw=true "Sapphire")
-Chipped Gem(1), Flawed Gem(2), Gem(3), Flawless Gem(4), Perfect Gem(5)
+Chipped Sapphire, Flawed Sapphire, Sapphire, Flawless Sapphire, Perfect Sapphire
+
 ![Gem - Topaz](img/gem.topaz.jpg?raw=true "Topaz")
-Chipped Gem(1), Flawed Gem(2), Gem(3), Flawless Gem(4), Perfect Gem(5)
+Chipped Topaz, Flawed Topaz, Topaz, Flawless Topaz, Perfect Topaz
+
 ![Gem - Skull](img/gem.skull.jpg?raw=true "Skull")
-Chipped Gem(1), Flawed Gem(2), Gem(3), Flawless Gem(4), Perfect Gem(5)
+Chipped Skull, Flawed Skull, Skull, Flawless Skull, Perfect Skull
 
 
-## Runes - TODO
-
-Adjusted naming with coloring/position of rune number.
+## Runes
 
 ![Runes](img/rune.jpg?raw=true "Runes")
+Adjusted naming with coloring/position of rune number.
 
 
-## Quantity - TODO
+## Quantity
 
 ![Quantity](img/quantity.jpg?raw=true "Quantity")
 
 
 
-<!-- inline image linking: ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true) -->
-<!-- inline image linking: ![alt text](./blob/[branch]/image.jpg?raw=true) -->
+<!-- inline image linking: ![Alt Text](img/name.jpg?raw=true "Title") -->
