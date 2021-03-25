@@ -41,9 +41,24 @@ Health/Mana potions are enumerated with a "Minor Healing Potion" becoming a "H1"
 
 
 ## Runes - TODO
-
-![](./blob/doc1/img/rune.jpg?raw=true)
 *TODO*
+
+1
+![alt](./blob/doc1/img/rune.jpg?raw=true)
+
+2
+![alt](https://github.com/scrollsjay/pd2-loot-filter/blob/doc1/img/rune.jpg?raw=true)
+
+3
+![alt](img/rune.jpg?raw=true "Title")
+
+
+4
+![alt](./img/rune.jpg?raw=true "Title")
+
+
+5
+-
 
 
 ## Quantity - TODO
