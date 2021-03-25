@@ -29,7 +29,7 @@ The changes made were mostly to allow for a briefer appearance of basic items to
 #### Filter changes
 - **Gold**: show more gold with finer steps in between based on clvl
 - **Keys/Antidots**: are hidden for clvl>30
-- **Notifications** for all drops (regardless of clvl) of: runes, set and unique items
+- **Notifications** for *all* rune, set and unique item drops
 
 
 ## Potions
