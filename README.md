@@ -1,3 +1,5 @@
+![Project Diablo 2](img/pd2.logo.png?raw=true "Project Diablo 2")
+
 # Project Diablo 2 - Loot Filter
 
 This is the [Loot Filter](https://projectdiablo2.miraheze.org/wiki/Item_Filtering) for the awesome MOD [Project Diablo 2](https://www.projectdiablo2.com/).
