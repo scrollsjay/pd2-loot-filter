@@ -1,13 +1,24 @@
-//	Kryszard's PD2 Loot Filter for Season II: ver 1.1.4
+//===> scrollsjay <===	@see all info at file bottom
+
+//	Kryszard's PD2 Loot Filter for Season II: ver 1.1.3
 //
 //	twitch.tv/kryszard
 //
 //	For Casual and EndGame Players
 
 //Gold
-ItemDisplay[GOLD<100 CLVL<18]:
-ItemDisplay[GOLD<1000 (CLVL>17 AND CLVL<80)]:
-ItemDisplay[GOLD<5000 CLVL>79]:
+//ItemDisplay[GOLD<100 CLVL<18]:
+//ItemDisplay[GOLD<1000 (CLVL>17 AND CLVL<80)]:
+//ItemDisplay[GOLD<5000 CLVL>79]:
+//KRB> - Ignore small gold stacks, progressive system
+ItemDisplay[CLVL>11 GOLD<100]:
+ItemDisplay[CLVL>19 GOLD<300]:
+ItemDisplay[CLVL>39 GOLD<800]:
+ItemDisplay[CLVL>59 GOLD<1000]:
+ItemDisplay[CLVL>79 GOLD<2500]:
+ItemDisplay[CLVL>84 GOLD<3000]:
+ItemDisplay[CLVL>89 GOLD<3500]:
+//<KRB
 
 //Show me that item is ethereal
 ItemDisplay[ETH UNI]: %GRAY%[%WHITE%eth%GRAY%] %GOLD%%NAME%%CONTINUE%
@@ -28,18 +39,32 @@ ItemDisplay[(ARMOR OR WEAPON) MAG ID]: %NAME% %GRAY%(%TAN%$%WHITE%%PRICE%%GRAY%)
 ItemDisplay[(ARMOR OR WEAPON) RARE ID]: %NAME% %GRAY%(%TAN%$%WHITE%%PRICE%%GRAY%)%YELLOW%%CONTINUE%
 
 //Health & Mana Potions
-ItemDisplay[rvl]: %PURPLE%R %WHITE%Full
-ItemDisplay[rvs]: %PURPLE%r %WHITE%35%
-ItemDisplay[hp5]: %RED%!%WHITE%Hp
-ItemDisplay[mp5]: %BLUE%!%WHITE%Mp
-ItemDisplay[hp1 DIFF=0]: %RED%!%WHITE%minor hp
-ItemDisplay[hp2 DIFF=0]: %RED%!%WHITE%light hp
-ItemDisplay[hp3 DIFF=0]: %RED%!%WHITE%healing
-ItemDisplay[hp4 DIFF<2]: %RED%!%WHITE%great hp
-ItemDisplay[mp1 DIFF=0]: %BLUE%!%WHITE%minor mp
-ItemDisplay[mp2 DIFF=0]: %BLUE%!%WHITE%light mp
-ItemDisplay[mp3 DIFF=0]: %BLUE%!%WHITE%mana
-ItemDisplay[mp4 DIFF<2]: %BLUE%!%WHITE%great mp
+//ItemDisplay[rvl]: %PURPLE%R %WHITE%Full
+//ItemDisplay[rvs]: %PURPLE%r %WHITE%35%
+//ItemDisplay[hp5]: %RED%!%WHITE%Hp
+//ItemDisplay[mp5]: %BLUE%!%WHITE%Mp
+//ItemDisplay[hp1 DIFF=0]: %RED%!%WHITE%minor hp
+//ItemDisplay[hp2 DIFF=0]: %RED%!%WHITE%light hp
+//ItemDisplay[hp3 DIFF=0]: %RED%!%WHITE%healing
+//ItemDisplay[hp4 DIFF<2]: %RED%!%WHITE%great hp
+//ItemDisplay[mp1 DIFF=0]: %BLUE%!%WHITE%minor mp
+//ItemDisplay[mp2 DIFF=0]: %BLUE%!%WHITE%light mp
+//ItemDisplay[mp3 DIFF=0]: %BLUE%!%WHITE%mana
+//ItemDisplay[mp4 DIFF<2]: %BLUE%!%WHITE%great mp
+//KRB> - Shorter potion names
+ItemDisplay[rvl]: %PURPLE%R%WHITE%2
+ItemDisplay[rvs]: %PURPLE%R%WHITE%1
+ItemDisplay[hp5]: %RED%H%WHITE%5
+ItemDisplay[mp5]: %BLUE%M%WHITE%5
+ItemDisplay[hp1 DIFF=0]: %RED%H%WHITE%1
+ItemDisplay[hp2 DIFF=0]: %RED%H%WHITE%2
+ItemDisplay[hp3 DIFF=0]: %RED%H%WHITE%3
+ItemDisplay[hp4 DIFF<2]: %RED%H%WHITE%4
+ItemDisplay[mp1 DIFF=0]: %BLUE%M%WHITE%1
+ItemDisplay[mp2 DIFF=0]: %BLUE%M%WHITE%2
+ItemDisplay[mp3 DIFF=0]: %BLUE%M%WHITE%3
+ItemDisplay[mp4 DIFF<2]: %BLUE%M%WHITE%4
+//<KRB
 ItemDisplay[(hp1 OR hp2 OR hp3 OR mp1 OR mp2 OR mp3) DIFF>0]:
 ItemDisplay[(hp4 OR mp4) DIFF>1]:
 
@@ -48,9 +73,15 @@ ItemDisplay[tsc CLVL<31]: %BLUE%* %GRAY%tp %WHITE%scroll
 ItemDisplay[isc CLVL<31]: %RED%* %GRAY%id %WHITE%scroll
 ItemDisplay[vps CLVL<31]: %GREEN%!%WHITE%stamina
 ItemDisplay[wms CLVL<31]: %GREEN%!%WHITE%thaw
-ItemDisplay[(tsc OR isc OR vps OR wms) CLVL>30]:
-ItemDisplay[yps]: %GREEN%!%WHITE%ant
-ItemDisplay[key]: %GRAY%key%CONTINUE%
+//ItemDisplay[(tsc OR isc OR vps OR wms) CLVL>30]:
+//ItemDisplay[yps]: %GREEN%!%WHITE%ant
+//ItemDisplay[key]: %GRAY%key%CONTINUE%
+//KRB> - Ignore anitdot/key for clvl>30
+ItemDisplay[yps CLVL<31]: %GREEN%!%WHITE%ant
+ItemDisplay[key CLVL<31]: %GRAY%key%CONTINUE%
+ItemDisplay[(tsc OR isc OR vps OR wms OR yps OR key) CLVL>30]:
+//<KRB
+
 
 //Arrows & Bolts
 ItemDisplay[(aqv OR cqv) NMAG CLVL>6]:
@@ -60,45 +91,73 @@ ItemDisplay[(gpm OR opm OR opl OR ops OR gps OR gpl) CLVL>23]:
 
 //Gems
 //fix for flaweless and perfects for some reason it need that fix?
-ItemDisplay[gzv OR gpv]: %NAME% %ORANGE%[%PURPLE%O%ORANGE%]%CONTINUE%
-ItemDisplay[glw OR gpw]: %NAME% %ORANGE%[%WHITE%O%ORANGE%]%CONTINUE%
-ItemDisplay[glg OR gpg]: %NAME% %ORANGE%[%GREEN%O%ORANGE%]%CONTINUE%
-ItemDisplay[glr OR gpr]: %NAME% %ORANGE%[%RED%O%ORANGE%]%CONTINUE%
-ItemDisplay[glb OR gpb]: %NAME% %ORANGE%[%BLUE%O%ORANGE%]%CONTINUE%
-ItemDisplay[gly OR gpy]: %NAME% %ORANGE%[%YELLOW%O%ORANGE%]%CONTINUE%
-ItemDisplay[skl OR skz]: %NAME% %ORANGE%[%GRAY%O%ORANGE%]%CONTINUE%
+//ItemDisplay[gzv OR gpv]: %NAME% %ORANGE%[%PURPLE%O%ORANGE%]%CONTINUE%
+//ItemDisplay[glw OR gpw]: %NAME% %ORANGE%[%WHITE%O%ORANGE%]%CONTINUE%
+//ItemDisplay[glg OR gpg]: %NAME% %ORANGE%[%GREEN%O%ORANGE%]%CONTINUE%
+//ItemDisplay[glr OR gpr]: %NAME% %ORANGE%[%RED%O%ORANGE%]%CONTINUE%
+//ItemDisplay[glb OR gpb]: %NAME% %ORANGE%[%BLUE%O%ORANGE%]%CONTINUE%
+//ItemDisplay[gly OR gpy]: %NAME% %ORANGE%[%YELLOW%O%ORANGE%]%CONTINUE%
+//ItemDisplay[skl OR skz]: %NAME% %ORANGE%[%GRAY%O%ORANGE%]%CONTINUE%
+//ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHITE%stack them%NL%}
+////hiding low ones
+//ItemDisplay[GEM<3 DIFF>0]:
+//ItemDisplay[GEM<4 DIFF>1]:
+////amethysts
+//ItemDisplay[GEMTYPE=1 GEM<4]: %NAME% %ORANGE%[%PURPLE%*%ORANGE%]
+//ItemDisplay[GEMTYPE=1 GEM>3]: %NAME% %ORANGE%[%PURPLE%O%ORANGE%]%CONTINUE%
+////diamonds
+//ItemDisplay[GEMTYPE=2 GEM<4]: %NAME% %ORANGE%[%WHITE%*%ORANGE%]
+//ItemDisplay[GEMTYPE=2 GEM>3]: %NAME% %ORANGE%[%WHITE%O%ORANGE%]%CONTINUE%
+////emeralds
+//ItemDisplay[GEMTYPE=3 GEM<4]: %NAME% %ORANGE%[%GREEN%*%ORANGE%]
+//ItemDisplay[GEMTYPE=3 GEM>3]: %NAME% %ORANGE%[%GREEN%O%ORANGE%]%CONTINUE%
+////rubys
+//ItemDisplay[GEMTYPE=4 GEM<4]: %NAME% %ORANGE%[%RED%*%ORANGE%]
+//ItemDisplay[GEMTYPE=4 GEM>3]: %NAME% %ORANGE%[%RED%O%ORANGE%]%CONTINUE%
+////sapphires
+//ItemDisplay[GEMTYPE=5 GEM<4]: %NAME% %ORANGE%[%BLUE%*%ORANGE%]
+//ItemDisplay[GEMTYPE=5 GEM>3]: %NAME% %ORANGE%[%BLUE%O%ORANGE%]%CONTINUE%
+////topazes
+//ItemDisplay[GEMTYPE=6 GEM<4]: %NAME% %ORANGE%[%YELLOW%*%ORANGE%]
+//ItemDisplay[GEMTYPE=6 GEM>3]: %NAME% %ORANGE%[%YELLOW%O%ORANGE%]%CONTINUE%
+////skulls
+//ItemDisplay[GEMTYPE=7 GEM<4]: %NAME% %ORANGE%[%GRAY%*%ORANGE%]
+//ItemDisplay[GEMTYPE=7 GEM>3]: %NAME% %ORANGE%[%GRAY%O%ORANGE%]%CONTINUE%
+//KRB> - Shorter / unified gem names, "Flawless Sapphire [O]" -> "(O4) Sapphire"
+ItemDisplay[GEMTYPE=1]: %ORANGE%(%PURPLE%O%CONTINUE%
+ItemDisplay[GEMTYPE=2]: %ORANGE%(%WHITE%O%CONTINUE%
+ItemDisplay[GEMTYPE=3]: %ORANGE%(%GREEN%O%CONTINUE%
+ItemDisplay[GEMTYPE=4]: %ORANGE%(%RED%O%CONTINUE%
+ItemDisplay[GEMTYPE=5]: %ORANGE%(%BLUE%O%CONTINUE%
+ItemDisplay[GEMTYPE=6]: %ORANGE%(%YELLOW%O%CONTINUE%
+ItemDisplay[GEMTYPE=7]: %ORANGE%(%GRAY%O%CONTINUE%
+ItemDisplay[GEM=1]: %NAME%%WHITE%1%CONTINUE%
+ItemDisplay[GEM=2]: %NAME%%WHITE%2%CONTINUE%
+ItemDisplay[GEM=3]: %NAME%%WHITE%3%CONTINUE%
+//special handling for non-stacked Flawless/Perfect gems as they are GEMLEVEL=NONE and "gem=4/5" does NOT work
+ItemDisplay[GEM=4 OR gzv OR glw OR glg OR glr OR glb OR gly OR skl]: %NAME%%WHITE%4%CONTINUE%
+ItemDisplay[GEM=5 OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME%%WHITE%5%CONTINUE%
+//replaces naming each gem per GEMTYPE=1..7 -> "Amethyst".."Skull"
+ItemDisplay[GEMTYPE>0]: %NAME%%ORANGE%) %WHITE%%GEMTYPE%%CONTINUE%
+//org tooltip / hiding low ones
 ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHITE%stack them%NL%}
-//hiding low ones
 ItemDisplay[GEM<3 DIFF>0]:
 ItemDisplay[GEM<4 DIFF>1]:
-//amethysts
-ItemDisplay[GEMTYPE=1 GEM<4]: %NAME% %ORANGE%[%PURPLE%*%ORANGE%]
-ItemDisplay[GEMTYPE=1 GEM>3]: %NAME% %ORANGE%[%PURPLE%O%ORANGE%]%CONTINUE%
-//diamonds
-ItemDisplay[GEMTYPE=2 GEM<4]: %NAME% %ORANGE%[%WHITE%*%ORANGE%]
-ItemDisplay[GEMTYPE=2 GEM>3]: %NAME% %ORANGE%[%WHITE%O%ORANGE%]%CONTINUE%
-//emeralds
-ItemDisplay[GEMTYPE=3 GEM<4]: %NAME% %ORANGE%[%GREEN%*%ORANGE%]
-ItemDisplay[GEMTYPE=3 GEM>3]: %NAME% %ORANGE%[%GREEN%O%ORANGE%]%CONTINUE%
-//rubys
-ItemDisplay[GEMTYPE=4 GEM<4]: %NAME% %ORANGE%[%RED%*%ORANGE%]
-ItemDisplay[GEMTYPE=4 GEM>3]: %NAME% %ORANGE%[%RED%O%ORANGE%]%CONTINUE%
-//sapphires
-ItemDisplay[GEMTYPE=5 GEM<4]: %NAME% %ORANGE%[%BLUE%*%ORANGE%]
-ItemDisplay[GEMTYPE=5 GEM>3]: %NAME% %ORANGE%[%BLUE%O%ORANGE%]%CONTINUE%
-//topazes
-ItemDisplay[GEMTYPE=6 GEM<4]: %NAME% %ORANGE%[%YELLOW%*%ORANGE%]
-ItemDisplay[GEMTYPE=6 GEM>3]: %NAME% %ORANGE%[%YELLOW%O%ORANGE%]%CONTINUE%
-//skulls
-ItemDisplay[GEMTYPE=7 GEM<4]: %NAME% %ORANGE%[%GRAY%*%ORANGE%]
-ItemDisplay[GEMTYPE=7 GEM>3]: %NAME% %ORANGE%[%GRAY%O%ORANGE%]%CONTINUE%
+//<KRB
+
 
 //Runes
-ItemDisplay[(RUNE<15 OR RUNE=16 OR RUNE=17) (CLVL>1 AND CLVL<80)]: %PX-62%%ORANGE%%RUNENAME% %GRAY%[%TAN%%RUNENUM%%GRAY%]%CONTINUE%
-ItemDisplay[(RUNE<15 OR RUNE=16 OR RUNE=17) (CLVL=1 OR CLVL>79)]: %ORANGE%%RUNENAME% %GRAY%[%TAN%%RUNENUM%%GRAY%]%CONTINUE%
-ItemDisplay[RUNE=15 OR RUNE=18 OR RUNE=19]: %PX-62%%TAN%*  %ORANGE%%RUNENAME% Rune %GRAY%[%WHITE%%RUNENUM%%GRAY%]%TAN%  *%CONTINUE%
-ItemDisplay[RUNE>19 AND RUNE<26]: %DOT-62%%RED%*     %ORANGE%%RUNENAME% Rune %GRAY%[%RED%%RUNENUM%%GRAY%]%RED%     *%CONTINUE%
-ItemDisplay[RUNE>25]: %BORDER-62%%NL%%GREEN%*%PURPLE%*%RED%*          %ORANGE%%RUNENAME% Rune %GRAY%[%GREEN%%RUNENUM%%GRAY%]%RED%          *%PURPLE%*%GREEN%*%CONTINUE%
+//ItemDisplay[(RUNE<15 OR RUNE=16 OR RUNE=17) (CLVL>1 AND CLVL<80)]: %PX-62%%ORANGE%%RUNENAME% %GRAY%[%TAN%%RUNENUM%%GRAY%]%CONTINUE%
+//ItemDisplay[(RUNE<15 OR RUNE=16 OR RUNE=17) (CLVL=1 OR CLVL>79)]: %ORANGE%%RUNENAME% %GRAY%[%TAN%%RUNENUM%%GRAY%]%CONTINUE%
+//ItemDisplay[RUNE=15 OR RUNE=18 OR RUNE=19]: %PX-62%%TAN%*  %ORANGE%%RUNENAME% Rune %GRAY%[%WHITE%%RUNENUM%%GRAY%]%TAN%  *%CONTINUE%
+//ItemDisplay[RUNE>19 AND RUNE<26]: %DOT-62%%RED%*     %ORANGE%%RUNENAME% Rune %GRAY%[%RED%%RUNENUM%%GRAY%]%RED%     *%CONTINUE%
+//ItemDisplay[RUNE>25]: %BORDER-62%%NL%%GREEN%*%PURPLE%*%RED%*          %ORANGE%%RUNENAME% Rune %GRAY%[%GREEN%%RUNENUM%%GRAY%]%RED%          *%PURPLE%*%GREEN%*%CONTINUE%
+//KRB> - Notify for ALL rune drops, regardless of clvl; RuneNumber is now PRE-pended, e.g. "#15 Hel Rune"
+ItemDisplay[RUNE<15 OR RUNE=16 OR RUNE=17]: %PX-62%%GRAY%#%TAN%%RUNENUM% %ORANGE%%RUNENAME%%CONTINUE%
+ItemDisplay[RUNE=15 OR RUNE=18 OR RUNE=19]: %PX-62%%TAN%*  %ORANGE%%GRAY%#%WHITE%%RUNENUM% %RUNENAME% Rune%TAN%  *%CONTINUE%
+ItemDisplay[RUNE>19 AND RUNE<26]: %DOT-62%%RED%*     %ORANGE%%GRAY%#%RED%%RUNENUM% %RUNENAME% Rune%RED%     *%CONTINUE%
+ItemDisplay[RUNE>25]: %BORDER-62%%NL%%GREEN%*%PURPLE%*%RED%*          %ORANGE%%GRAY%#%GREEN%%RUNENUM% %RUNENAME% Rune%RED%          *%PURPLE%*%GREEN%*%CONTINUE%
+//<KRB
 
 //All Charms
 ItemDisplay[cm2 MAG !ID]: %TAN%*%BLUE% %NAME% %TAN%*
@@ -291,14 +350,17 @@ ItemDisplay[((mau OR 7ls OR 9ls OR 7br OR 7sr OR 7p7 OR 9ba OR 7ga OR 7wa OR 7gi
 ItemDisplay[((ARMOR OR WEAPON) (EXC OR ELT OR ci0 OR ba5) !(9vo OR xcl OR xrn)) SET !ID]: %PX-84%%NAME%
 
 //Highlight all Sets and Uniques for low lvl characters
-ItemDisplay[UNI !ID CLVL<80]: %PX-68%%NAME%
-ItemDisplay[SET !ID CLVL<80]: %PX-84%%NAME%
+//ItemDisplay[UNI !ID CLVL<80]: %PX-68%%NAME%
+//ItemDisplay[SET !ID CLVL<80]: %PX-84%%NAME%
+//KRB> - Notify for ALL unique/set items
+ItemDisplay[UNI !ID]: %PX-68%%NAME%
+ItemDisplay[SET !ID]: %PX-84%%NAME%
+//<KRB
 
 //Shop Hunting
 ItemDisplay[WEAPON !UNI TABSK34>2]: %NAME%%NL%%RED%***   %GREEN%Warcries Weapon%RED%   ***{%RED%***   %GREEN%Warcries Weapon%RED%   ***%NL%%TAN%Note%WHITE%: Notice me, That's me:}
 ItemDisplay[CL5 !UNI ((TABSK49>1 OR CLSK6>1) AND SK278>1)]: %NAME%%NL%%RED%***   %GREEN%Venom Claws%RED%   ***{%RED%***   %GREEN%Venom Claws%RED%   ***%NL%%TAN%Note%WHITE%: Notice me, That's me:}
 ItemDisplay[CL5 !UNI ((TABSK49>1 OR CLSK6>1) AND SK273>1)]: %NAME%%NL%%RED%***   %GREEN%Mind Blast Claws%RED%   ***{%RED%***   %GREEN%Mind Blast Claws%RED%   ***%NL%%TAN%Note%WHITE%: Notice me, That's me:}
-ItemDisplay[CL5 !UNI (TABSK50>2 OR ((TABSK50>1 OR CLSK6>1) AND (SK280>1 OR SK265>1)))]: %NAME%%NL%%RED%***   %GREEN%Martial Arts Claws%RED%   ***{%RED%***   %GREEN%Martial Arts Claws%RED%   ***%NL%%TAN%Note%WHITE%: Notice me, That's me:}
 ItemDisplay[CL5 !UNI (TABSK48>2 OR ((TABSK48>1 OR CLSK6>1) AND (SK366>1 OR SK276>1 OR SK272>1 OR SK271>1 OR SK262>1)))]: %NAME%%NL%%RED%***   %GREEN%Traps Claws%RED%   ***{%RED%***   %GREEN%Traps Claws%RED%   ***%NL%%TAN%Note%WHITE%: Notice me, That's me:}
 ItemDisplay[EQ4 !UNI (TABSK0>2 OR TABSK2>2 OR TABSK50>2) AND IAS>19]: %NAME%%NL%%RED%***   %GREEN%3sk, 20ias Gloves%RED%   ***{%RED%***   %GREEN%3sk, 20ias Gloves%RED%   ***%NL%%TAN%Note%WHITE%: Notice me, That's me:}
 ItemDisplay[WP13 !UNI ((TABSK24>2 AND SK101>1) OR (TABSK24>1 AND SK101>2) OR (CLSK3>1 AND SK101>2))]: %NAME%%NL%%RED%***   %GREEN%Holy Bolt Scepter%RED%   ***{%RED%***   %GREEN%Holy Bolt Scepter%RED%   ***%NL%%TAN%Note%WHITE%: Notice me, That's me:}
@@ -1046,7 +1108,7 @@ ItemDisplay[(72h OR 7gs) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%WHITE%This 
 //Chaos
 ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK276>0 OR SK278>0) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%WHITE%This Item + %ORANGE%Ral %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Socketing Recipe:}
 //Plague
-ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2 OR SK265>2 OR (SK278>1 AND SK265>1) OR SK366>2 OR SK280>2) !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%WHITE%This Item + %ORANGE%Ral %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Socketing Recipe:}
+ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2 OR SK265>2 OR (SK278>1 AND SK265>1) OR SK366>0) !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%WHITE%This Item + %ORANGE%Ral %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Socketing Recipe:}
 ItemDisplay[(SCEPTER !(scp OR 9sc OR 7sc)) (SK101>2 OR SK112>2 OR SK118>2 OR SK121>2) !INF !SUP SOCK=0 NMAG]: %NAME%{%WHITE%This Item + %ORANGE%Ral %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Socketing Recipe:}
 //Amazon Spears
 ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%WHITE%This Item + %ORANGE%Ral %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Socketing Recipe:}
@@ -1095,7 +1157,7 @@ ItemDisplay[(72h OR 7gs) ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%
 ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK276>0 OR SK278>0) ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%
 //Plague
 ItemDisplay[(SCEPTER !(scp OR 9sc OR 7sc OR wsp OR 9ws OR 7ws)) (SK101>2 OR SK112>2 OR SK118>2 OR SK121>2) SOCK=0 (INF OR SUP) NMAG]: %NAME%
-ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2 OR SK265>2 OR (SK278>1 AND SK265>1) OR SK366>2 OR SK280>2) SOCK=0 (INF OR SUP) NMAG]: %DOT-D6%%NAME%
+ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2 OR SK265>2 OR (SK278>1 AND SK265>1) OR SK366>0) SOCK=0 (INF OR SUP) NMAG]: %DOT-D6%%NAME%
 //Armors
 ItemDisplay[(xtp OR utp OR uui OR uea OR ula OR utu OR urs OR uar) SOCK=0 SUP NMAG]: %NAME%
 ItemDisplay[EQ2 ELT ETH SOCK=0 SUP NMAG]: %NAME%
@@ -1192,7 +1254,7 @@ ItemDisplay[(7p7 OR 7h7) ETH NMAG !RW SOCK=6]: %DOT-D6%%NAME%{%GRAY%Breath of th
 ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF NMAG !RW SOCK=4]: %DOT-D6%%NAME%{%GRAY%Passion, Phoenix, Pride, Rift%NL%Hand of Justice, Infinity, Insight,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}
 //Claws
 ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK276>0 OR SK278>0) !INF ETH NMAG !RW SOCK=3]: %DOT-D6%%NAME%{%GRAY%Pattern, Plague, Venom, Wind%NL%Chaos, Fury, Malice,%NL%%TAN%Note%WHITE%: Possible RuneWords:}
-ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2 OR SK265>2 OR (SK278>1 AND SK265>1) OR SK366>2 OR SK280>2) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME%{%GRAY%Pattern, Plague, Venom, Wind%NL%Chaos, Fury, Malice,%NL%%TAN%Note%WHITE%: Possible RuneWords:}
+ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2 OR SK265>2 OR (SK278>1 AND SK265>1) OR SK366>0) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME%{%GRAY%Pattern, Plague, Venom, Wind%NL%Chaos, Fury, Malice,%NL%%TAN%Note%WHITE%: Possible RuneWords:}
 
 //Notes for upgrading
 ItemDisplay[ARMOR NORM RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Thul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
@@ -1217,7 +1279,11 @@ ItemDisplay[(7tk OR 7bk OR 7ta) (NMAG OR ((MAG OR RARE) !ID)) !ETH !INF]: %NAME%
 ItemDisplay[(WAND OR SOR) (SK86>1 OR SK87>1 OR SK88>1 OR SK89>1 OR SK90>1 OR SK91>1 OR SK92>1 OR SK93>1 OR SK94>1 OR SK95>1 OR SK56>1 OR SK57>1 OR SK58>1 OR SK59>1 OR SK60>1 OR SK61>1 OR SK62>1 OR SK63>1 OR SK64>1 OR SK65>1) !ETH !INF NMAG CLVL>79]: %NAME%
 
 //Show me quantitiy of all stackables
-ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>0]: %NAME% %TAN%x %WHITE%%QTY%%CONTINUE%
+//ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>0]: %NAME% %TAN%x %WHITE%%QTY%%CONTINUE%
+//KRB> - Quantity from "x 5" to "x5", colors from TAN/WHITE to GRAY/WHITE to not stand out too much
+ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>0]: %NAME% %GRAY%x%WHITE%%QTY%%CONTINUE%
+//<KRB
+
 
 //Standard of Heroes
 ItemDisplay[std]: %PX-9D%%NAME%{%WHITE%+10% Experience%NL%+20% Magic&Gold Find%NL%+20% Monster Density%NL%%TAN%Note: %WHITE%Cube it with Map to gain:}
@@ -1453,4 +1519,38 @@ ItemDisplay[(am5 OR ama OR amf) NMAG !RW TABSK2>2 CLVL<80]: %NAME%
 ItemDisplay[(ARMOR OR WEAPON) INF]: 
 ItemDisplay[(ARMOR OR WEAPON) !leg CLVL>30]: 
 
-//Itâ€™s just different sizes. BORDER > MAP > DOT > PX.
+//It’s just different sizes. BORDER > MAP > DOT > PX.
+
+
+
+//===================================================================
+//===
+//===> scrollsjay <===	@see all info at file bottom
+//===
+//===================================================================
+//=== lastmod	2021-03-22
+//
+//loot filer "Kryszard", 2021-03-21, v1.1.3
+//source: https://github.com/Kryszard-POD/Kryszard-s-PD2-Loot-Filter/
+//
+//
+//
+//NOTEPAD++
+//Menu / Encoding / Ansi
+//Language / D2 item filter
+//
+//EDIT TEMPLATE
+//KRB> - Description
+//<KRB
+//
+//CHANGES
+//0013	show more gold (poco)
+//0054	short names for: health pots, mana pots, rejuv (poco)
+//0079	Ignore antidot/key for clvl>30
+//0126	Shorter / unified gem names, "Flawless Sapphire [O]" -> "(O4) Sapphire" (fixed non-stack flawless/perfect)
+//0155	Notify for ALL rune drops, regardless of clvl; RuneNumber is now PRE-pended, e.g. "#15 Hel Rune"
+//0355	Notify for ALL unique/set items
+//1283	Quantity from "x 5" to "x5", colors from TAN/WHITE to GRAY/WHITE to not stand out too much
+//TODO: notes/recipes on item tooltip too bright/important, better: make grey?
+//TODO: Place of ilvl seems off / should be placed better (it's occasional important, but not most of the time)
+//TODO: x
