@@ -570,25 +570,49 @@ ItemDisplay[(hp1 OR hp2 OR hp3 OR mp1 OR mp2 OR mp3) DIFF>0]:
 ItemDisplay[(hp4 OR mp4) DIFF>1]:
 
 //Utilites
-ItemDisplay[tsc CLVL<31]: %BLUE%* %GRAY%tp %WHITE%scroll
-ItemDisplay[isc CLVL<31]: %RED%* %GRAY%id %WHITE%scroll
-ItemDisplay[vps CLVL<31]: %GREEN%!%WHITE%stamina
-ItemDisplay[wms CLVL<31]: %GREEN%!%WHITE%thaw
-//ItemDisplay[(tsc OR isc OR vps OR wms) CLVL>30]:
-//ItemDisplay[yps]: %GREEN%!%WHITE%ant
-//ItemDisplay[key]: %GRAY%key%CONTINUE%
-//KRB> - Ignore anitdot/key for clvl>30
-ItemDisplay[yps CLVL<31]: %GREEN%!%WHITE%ant
-ItemDisplay[key CLVL<31]: %GRAY%key%CONTINUE%
-ItemDisplay[(tsc OR isc OR vps OR wms OR yps OR key) CLVL>30]:
+//ItemDisplay[tsc CLVL<31]: %BLUE%* %GRAY%tp %WHITE%scroll
+//ItemDisplay[isc CLVL<31]: %RED%* %GRAY%id %WHITE%scroll
+//ItemDisplay[vps CLVL<31]: %GREEN%!%WHITE%stamina
+//ItemDisplay[wms CLVL<31]: %GREEN%!%WHITE%thaw
+////ItemDisplay[(tsc OR isc OR vps OR wms) CLVL>30]:
+////ItemDisplay[yps]: %GREEN%!%WHITE%ant
+////ItemDisplay[key]: %GRAY%key%CONTINUE%
+////KRB> - Ignore anitdot/key for clvl>30
+//ItemDisplay[yps CLVL<31]: %GREEN%!%WHITE%ant
+//ItemDisplay[key CLVL<31]: %GRAY%key%CONTINUE%
+//ItemDisplay[(tsc OR isc OR vps OR wms OR yps OR key) CLVL>30]:
+////<KRB
+////Arrows & Bolts
+//ItemDisplay[(aqv OR cqv) NMAG CLVL>6]:
+////Choking, Exploding, Fulminating, Oil, Rancid, Strangling
+//ItemDisplay[(gpm OR opm OR opl OR ops OR gps OR gpl) CLVL>23]:
+
+
+//KRB> - Description
+//Potion
+ItemDisplay[yps]: %GRAY%Þû %WHITE%Antidot%CONTINUE%		//Antidot
+ItemDisplay[wms]: %YELLOW%Þ %WHITE%Thawing%CONTINUE%		//Thawing
+ItemDisplay[vps]: %WHITE%Þ %WHITE%Stamina%CONTINUE%		//Stamina
+ItemDisplay[opl]: %ORANGE%Þ %WHITE%Explode 1%CONTINUE%		//Fulminating
+ItemDisplay[opm]: %ORANGE%Þ %WHITE%Explode 2%CONTINUE%		//Exploding
+ItemDisplay[ops]: %ORANGE%Þ %WHITE%Explode 3%CONTINUE%		//Oil
+ItemDisplay[gpl]: %GREEN%Þ %WHITE%Poison 1%CONTINUE%		//Strangling Gas
+ItemDisplay[gpm]: %GREEN%Þ %WHITE%Poison 2%CONTINUE%		//Choking
+ItemDisplay[gps]: %GREEN%Þ %WHITE%Poison 3%CONTINUE%		//Rancid
+//scroll/tome
+ItemDisplay[tsc]: %BLUE%æ %WHITE%Portal%CONTINUE%		//Scroll of Town Portal
+ItemDisplay[isc]: %RED%æ %WHITE%Identify%CONTINUE%		//Scroll of Identify
+ItemDisplay[tbk]: %BLUE%æ %WHITE%Portal Tome%CONTINUE%		//Tome of Town Portal
+ItemDisplay[ibk]: %RED%æ %WHITE%Identify Tome%CONTINUE%		//Tome of Identify
+//key
+ItemDisplay[key]: %YELLOW%* %WHITE%%NAME%%CONTINUE%		//Key
+//ranged ammo
+ItemDisplay[aqv]: î %NAME%%CONTINUE%		//Arrows
+ItemDisplay[cqv]: %GRAY%(î) %WHITE%%NAME%%CONTINUE%		//Bolts
 //<KRB
 
 
-//Arrows & Bolts
-ItemDisplay[(aqv OR cqv) NMAG CLVL>6]:
 
-//Choking, Exploding, Fulminating, Oil, Rancid, Strangling
-ItemDisplay[(gpm OR opm OR opl OR ops OR gps OR gpl) CLVL>23]:
 
 //Gems
 //fix for flaweless and perfects for some reason it need that fix?
@@ -2107,8 +2131,8 @@ ItemDisplay[SCEPTER !(wsp OR 9qs OR 9ws OR 7ws) (SK378>2 OR SK121>2 OR SK117>2 O
 
 //Show me quantitiy of all stackables
 //ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>0]: %NAME% %TAN%x %WHITE%%QTY%%CONTINUE%
-//KRB> - Quantity from "x 5" to "x5", colors from TAN/WHITE to GRAY/WHITE to not stand out too much
-ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>0]: %NAME% %GRAY%x%WHITE%%QTY%%CONTINUE%
+//KRB> - Quantity from "x 5" to "x5", colors from TAN/WHITE to GRAY/WHITE to not stand out too much: x×
+ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>0]: %NAME% %GRAY%x×%WHITE%%QTY%%CONTINUE%
 //<KRB
 
 
