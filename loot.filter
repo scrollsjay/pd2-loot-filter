@@ -553,8 +553,8 @@ ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE) ID]: %NAME% %GRAY%(%TAN%$%WHITE%%PRI
 //ItemDisplay[mp3 DIFF=0]: %BLUE%!%WHITE%mana
 //ItemDisplay[mp4 DIFF<2]: %BLUE%!%WHITE%great mp
 //KRB> - Shorter potion names
-ItemDisplay[rvl]: %PURPLE%R%WHITE%2
 ItemDisplay[rvs]: %PURPLE%R%WHITE%1
+ItemDisplay[rvl]: %PURPLE%R%WHITE%2
 ItemDisplay[hp5]: %RED%H%WHITE%5
 ItemDisplay[mp5]: %BLUE%M%WHITE%5
 ItemDisplay[hp1 DIFF=0]: %RED%H%WHITE%1
@@ -590,25 +590,49 @@ ItemDisplay[(hp4 OR mp4) DIFF>1]:
 
 //KRB> - Description
 //Potion
-ItemDisplay[yps]: %GRAY%Þû %WHITE%Antidot%CONTINUE%		//Antidot
-ItemDisplay[wms]: %YELLOW%Þ %WHITE%Thawing%CONTINUE%		//Thawing
-ItemDisplay[vps]: %WHITE%Þ %WHITE%Stamina%CONTINUE%		//Stamina
-ItemDisplay[opl]: %ORANGE%Þ %WHITE%Explode 1%CONTINUE%		//Fulminating
-ItemDisplay[opm]: %ORANGE%Þ %WHITE%Explode 2%CONTINUE%		//Exploding
-ItemDisplay[ops]: %ORANGE%Þ %WHITE%Explode 3%CONTINUE%		//Oil
-ItemDisplay[gpl]: %GREEN%Þ %WHITE%Poison 1%CONTINUE%		//Strangling Gas
-ItemDisplay[gpm]: %GREEN%Þ %WHITE%Poison 2%CONTINUE%		//Choking
-ItemDisplay[gps]: %GREEN%Þ %WHITE%Poison 3%CONTINUE%		//Rancid
+//ItemDisplay[yps]: %GRAY%Þ %WHITE%Antidot%CONTINUE%		//Antidot
+//ItemDisplay[wms]: %YELLOW%Þ %WHITE%Thawing%CONTINUE%		//Thawing
+//ItemDisplay[vps]: %WHITE%Þ %WHITE%Stamina%CONTINUE%		//Stamina
+//ItemDisplay[opl]: %ORANGE%Þ %WHITE%Explode 1%CONTINUE%		//Fulminating
+//ItemDisplay[opm]: %ORANGE%Þ %WHITE%Explode 2%CONTINUE%		//Exploding
+//ItemDisplay[ops]: %ORANGE%Þ %WHITE%Explode 3%CONTINUE%		//Oil
+//ItemDisplay[gpl]: %GREEN%Þ %WHITE%Poison 1%CONTINUE%		//Strangling Gas
+//ItemDisplay[gpm]: %GREEN%Þ %WHITE%Poison 2%CONTINUE%		//Choking
+//ItemDisplay[gps]: %GREEN%Þ %WHITE%Poison 3%CONTINUE%		//Rancid
+
+//Antidote
+//ItemDisplay[yps]: %WHITE%Antidot{%WHITE%Cure Poison, +50 %GREEN%Psn %WHITE%Res, +10 max %GREEN%Psn %WHITE%Res - for 30s%NL%%GRAY%Cure Poison, +50 %GREEN%Psn %GRAY%Res, +10 max %GREEN%Psn %GRAY%Res - for 30s}%CONTINUE%
+//ItemDisplay[yps]: %WHITE%Antidot{%GRAY%+10 max %GREEN%Poison %GRAY%Res (30s)%NL%%GRAY%+50 %GREEN%Poison %GRAY%Res (30s)%NL%%GRAY%Cure Poisoned Char}%CONTINUE%
+ItemDisplay[yps]: %WHITE%Antidote{%WHITE%Use Potion: Cure Poison, +25 %GREEN%Poison %WHITE%Res (30s)}%CONTINUE%
+//TODO: THAWING: only +25 / +5
+//Cure Poison, +50 Psn Res, +10 max Psn Res - for 30s
+//Thawing - changed to 1/2 res, removed max res: from "Cure Frozen, +50 Cold Res (30s), +10 max Cold Res (30s)" to "Cure Frozen, +25 Cold Res (30s)"
+//ItemDisplay[wms]: %WHITE%Thawing{%GRAY%+10 max %BLUE%Cold %GRAY%Res (30s)%NL%%GRAY%+50 %BLUE%Cold %GRAY%Res (30s)%NL%%GRAY%Cure Frozen Char}%CONTINUE%
+ItemDisplay[wms]: %WHITE%Thawing{%WHITE%Use Potion: Cure Frozen, +25 %BLUE%Cold %WHITE%Res (30s)}%CONTINUE%
+//Stamina
+ItemDisplay[vps]: %WHITE%Stamina{%WHITE%Use Potion: Refill Stamina, Infinite Stamina (30s)}%CONTINUE%
+//fire bomb: Fulminating, Exploding, Oil
+ItemDisplay[opl]: %WHITE%Explode 1%CONTINUE%
+ItemDisplay[opm]: %WHITE%Explode 2%CONTINUE%
+ItemDisplay[ops]: %WHITE%Explode 3%CONTINUE%
+//poison bomb: Strangling Gas, Choking, Rancid
+ItemDisplay[gpl]: %WHITE%Poison 1%CONTINUE%
+ItemDisplay[gpm]: %WHITE%Poison 2%CONTINUE%
+ItemDisplay[gps]: %WHITE%Poison 3%CONTINUE%
 //scroll/tome
-ItemDisplay[tsc]: %BLUE%æ %WHITE%Portal%CONTINUE%		//Scroll of Town Portal
-ItemDisplay[isc]: %RED%æ %WHITE%Identify%CONTINUE%		//Scroll of Identify
-ItemDisplay[tbk]: %BLUE%æ %WHITE%Portal Tome%CONTINUE%		//Tome of Town Portal
-ItemDisplay[ibk]: %RED%æ %WHITE%Identify Tome%CONTINUE%		//Tome of Identify
+//ItemDisplay[tsc]: %BLUE%æ %WHITE%Portal{%GRAY%Right Click to spawn Town Portal}%CONTINUE%		//Scroll of Town Portal
+//ItemDisplay[isc]: %RED%æ %WHITE%Identify{%GRAY%Right Click to identify Magical Item}%CONTINUE%		//Scroll of Identify
+ItemDisplay[tsc]: %WHITE%Portal{%WHITE%Use Scroll: Spawn a Town Portal}%CONTINUE%		//Scroll of Town Portal
+ItemDisplay[isc]: %WHITE%Identify{%WHITE%Use Scroll: Identify a Magical Item}%CONTINUE%		//Scroll of Identify
+//ItemDisplay[tbk]: %BLUE%æ %WHITE%Portal Tome%CONTINUE%		//Tome of Town Portal
+//ItemDisplay[ibk]: %RED%æ %WHITE%Identify Tome%CONTINUE%		//Tome of Identify
 //key
-ItemDisplay[key]: %YELLOW%* %WHITE%%NAME%%CONTINUE%		//Key
+//ItemDisplay[key]: %YELLOW%* %WHITE%%NAME%%CONTINUE%		//Key
 //ranged ammo
-ItemDisplay[aqv]: î %NAME%%CONTINUE%		//Arrows
-ItemDisplay[cqv]: %GRAY%(î) %WHITE%%NAME%%CONTINUE%		//Bolts
+//ItemDisplay[aqv]: î %NAME%%CONTINUE%		//Arrows
+//ItemDisplay[cqv]: %GRAY%(î) %WHITE%%NAME%%CONTINUE%		//Bolts
+//ItemDisplay[aqv]: %NAME% %GRAY%x%WHITE%%QTY%
+//ItemDisplay[cqv]: %NAME% %GRAY%×%WHITE%%QTY%
 //<KRB
 
 
@@ -2129,8 +2153,8 @@ ItemDisplay[SCEPTER !(wsp OR 9qs OR 9ws OR 7ws) (SK378>2 OR SK121>2 OR SK117>2 O
 
 //Show me quantitiy of all stackables
 //ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>0]: %NAME% %TAN%x %WHITE%%QTY%%CONTINUE%
-//KRB> - Quantity from "x 5" to "x5", colors from TAN/WHITE to GRAY/WHITE to not stand out too much: x×
-ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>0]: %NAME% %GRAY%x×%WHITE%%QTY%%CONTINUE%
+//KRB> - Quantity from "x 5" to "x5", colors from TAN/WHITE to GRAY/WHITE to not stand out too much ("x" / ansi "×")
+ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>0]: %NAME% %GRAY%×%WHITE%%QTY%%CONTINUE%
 //<KRB
 
 
