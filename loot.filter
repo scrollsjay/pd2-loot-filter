@@ -10,7 +10,7 @@
 //ItemDisplay[GOLD<100 CLVL<18]:
 //ItemDisplay[GOLD<1000 (CLVL>17 AND CLVL<80)]:
 //ItemDisplay[GOLD<5000 CLVL>79]:
-//KRB> - Ignore small gold stacks, progressive system
+//KRB> - Ignore small gold stacks, progressive system (poco)
 ItemDisplay[CLVL>11 GOLD<100]:
 ItemDisplay[CLVL>19 GOLD<300]:
 ItemDisplay[CLVL>39 GOLD<800]:
@@ -539,6 +539,7 @@ ItemDisplay[SOCK>0]: %NAME% %TAN%[%WHITE%%SOCKETS%%TAN%]%CONTINUE%
 //Show me price of every MAG or RARE weapon/armor after ID
 ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE) ID]: %NAME% %GRAY%(%TAN%$%WHITE%%PRICE%%GRAY%)%CONTINUE%
 
+
 //Health & Mana Potions
 //ItemDisplay[rvl]: %PURPLE%R %WHITE%Full
 //ItemDisplay[rvs]: %PURPLE%r %WHITE%35%
@@ -552,90 +553,60 @@ ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE) ID]: %NAME% %GRAY%(%TAN%$%WHITE%%PRI
 //ItemDisplay[mp2 DIFF=0]: %BLUE%!%WHITE%light mp
 //ItemDisplay[mp3 DIFF=0]: %BLUE%!%WHITE%mana
 //ItemDisplay[mp4 DIFF<2]: %BLUE%!%WHITE%great mp
-//KRB> - Shorter potion names
-ItemDisplay[rvs]: %PURPLE%R%WHITE%1
-ItemDisplay[rvl]: %PURPLE%R%WHITE%2
-ItemDisplay[hp5]: %RED%H%WHITE%5
-ItemDisplay[mp5]: %BLUE%M%WHITE%5
-ItemDisplay[hp1 DIFF=0]: %RED%H%WHITE%1
-ItemDisplay[hp2 DIFF=0]: %RED%H%WHITE%2
-ItemDisplay[hp3 DIFF=0]: %RED%H%WHITE%3
-ItemDisplay[hp4 DIFF<2]: %RED%H%WHITE%4
-ItemDisplay[mp1 DIFF=0]: %BLUE%M%WHITE%1
-ItemDisplay[mp2 DIFF=0]: %BLUE%M%WHITE%2
-ItemDisplay[mp3 DIFF=0]: %BLUE%M%WHITE%3
-ItemDisplay[mp4 DIFF<2]: %BLUE%M%WHITE%4
+//ItemDisplay[(hp1 OR hp2 OR hp3 OR mp1 OR mp2 OR mp3) DIFF>0]:
+//ItemDisplay[(hp4 OR mp4) DIFF>1]:
+//KRB> - Short health / mana / rejuv potion names (poco), altered filter syntax
+ItemDisplay[hp1]: %RED%H%WHITE%1%CONTINUE%
+ItemDisplay[hp2]: %RED%H%WHITE%2%CONTINUE%
+ItemDisplay[hp3]: %RED%H%WHITE%3%CONTINUE%
+ItemDisplay[hp4]: %RED%H%WHITE%4%CONTINUE%
+ItemDisplay[hp5]: %RED%H%WHITE%5%CONTINUE%
+ItemDisplay[mp1]: %BLUE%M%WHITE%1%CONTINUE%
+ItemDisplay[mp2]: %BLUE%M%WHITE%2%CONTINUE%
+ItemDisplay[mp3]: %BLUE%M%WHITE%3%CONTINUE%
+ItemDisplay[mp4]: %BLUE%M%WHITE%4%CONTINUE%
+ItemDisplay[mp5]: %BLUE%M%WHITE%5%CONTINUE%
+ItemDisplay[rvs]: %PURPLE%R%WHITE%1%CONTINUE%
+ItemDisplay[rvl]: %PURPLE%R%WHITE%2%CONTINUE%
+ItemDisplay[(hp1 OR hp2 OR mp1 OR mp2) DIFF>0]:
+ItemDisplay[(hp3 OR hp4 OR mp3 OR mp4) DIFF>1]:
 //<KRB
-ItemDisplay[(hp1 OR hp2 OR hp3 OR mp1 OR mp2 OR mp3) DIFF>0]:
-ItemDisplay[(hp4 OR mp4) DIFF>1]:
+
 
 //Utilites
 //ItemDisplay[tsc CLVL<31]: %BLUE%* %GRAY%tp %WHITE%scroll
 //ItemDisplay[isc CLVL<31]: %RED%* %GRAY%id %WHITE%scroll
 //ItemDisplay[vps CLVL<31]: %GREEN%!%WHITE%stamina
 //ItemDisplay[wms CLVL<31]: %GREEN%!%WHITE%thaw
-////ItemDisplay[(tsc OR isc OR vps OR wms) CLVL>30]:
-////ItemDisplay[yps]: %GREEN%!%WHITE%ant
-////ItemDisplay[key]: %GRAY%key%CONTINUE%
-////KRB> - Ignore anitdot/key for clvl>30
-//ItemDisplay[yps CLVL<31]: %GREEN%!%WHITE%ant
-//ItemDisplay[key CLVL<31]: %GRAY%key%CONTINUE%
-//ItemDisplay[(tsc OR isc OR vps OR wms OR yps OR key) CLVL>30]:
-////<KRB
+//ItemDisplay[(tsc OR isc OR vps OR wms) CLVL>30]:
+//ItemDisplay[yps]: %GREEN%!%WHITE%ant
+//ItemDisplay[key]: %GRAY%key%CONTINUE%
 ////Arrows & Bolts
 //ItemDisplay[(aqv OR cqv) NMAG CLVL>6]:
 ////Choking, Exploding, Fulminating, Oil, Rancid, Strangling
 //ItemDisplay[(gpm OR opm OR opl OR ops OR gps OR gpl) CLVL>23]:
-
-
-//KRB> - Description
-//Potion
-//ItemDisplay[yps]: %GRAY%Þ %WHITE%Antidot%CONTINUE%		//Antidot
-//ItemDisplay[wms]: %YELLOW%Þ %WHITE%Thawing%CONTINUE%		//Thawing
-//ItemDisplay[vps]: %WHITE%Þ %WHITE%Stamina%CONTINUE%		//Stamina
-//ItemDisplay[opl]: %ORANGE%Þ %WHITE%Explode 1%CONTINUE%		//Fulminating
-//ItemDisplay[opm]: %ORANGE%Þ %WHITE%Explode 2%CONTINUE%		//Exploding
-//ItemDisplay[ops]: %ORANGE%Þ %WHITE%Explode 3%CONTINUE%		//Oil
-//ItemDisplay[gpl]: %GREEN%Þ %WHITE%Poison 1%CONTINUE%		//Strangling Gas
-//ItemDisplay[gpm]: %GREEN%Þ %WHITE%Poison 2%CONTINUE%		//Choking
-//ItemDisplay[gps]: %GREEN%Þ %WHITE%Poison 3%CONTINUE%		//Rancid
-
-//Antidote
-//ItemDisplay[yps]: %WHITE%Antidot{%WHITE%Cure Poison, +50 %GREEN%Psn %WHITE%Res, +10 max %GREEN%Psn %WHITE%Res - for 30s%NL%%GRAY%Cure Poison, +50 %GREEN%Psn %GRAY%Res, +10 max %GREEN%Psn %GRAY%Res - for 30s}%CONTINUE%
-//ItemDisplay[yps]: %WHITE%Antidot{%GRAY%+10 max %GREEN%Poison %GRAY%Res (30s)%NL%%GRAY%+50 %GREEN%Poison %GRAY%Res (30s)%NL%%GRAY%Cure Poisoned Char}%CONTINUE%
+//KRB> - Misc basic items - refined naming scheme with some beginner usage info text
+//Antidote/Thawing undocumented pd2 change: res halved (50% -> 25%), max res removed; consuming multiples still stacks duration
+//Antidote, Thawing, Stamina
 ItemDisplay[yps]: %WHITE%Antidote{%WHITE%Use Potion: Cure Poison, +25 %GREEN%Poison %WHITE%Res (30s)}%CONTINUE%
-//TODO: THAWING: only +25 / +5
-//Cure Poison, +50 Psn Res, +10 max Psn Res - for 30s
-//Thawing - changed to 1/2 res, removed max res: from "Cure Frozen, +50 Cold Res (30s), +10 max Cold Res (30s)" to "Cure Frozen, +25 Cold Res (30s)"
-//ItemDisplay[wms]: %WHITE%Thawing{%GRAY%+10 max %BLUE%Cold %GRAY%Res (30s)%NL%%GRAY%+50 %BLUE%Cold %GRAY%Res (30s)%NL%%GRAY%Cure Frozen Char}%CONTINUE%
 ItemDisplay[wms]: %WHITE%Thawing{%WHITE%Use Potion: Cure Frozen, +25 %BLUE%Cold %WHITE%Res (30s)}%CONTINUE%
-//Stamina
 ItemDisplay[vps]: %WHITE%Stamina{%WHITE%Use Potion: Refill Stamina, Infinite Stamina (30s)}%CONTINUE%
-//fire bomb: Fulminating, Exploding, Oil
+//fire grenade: Fulminating, Exploding, Oil
 ItemDisplay[opl]: %WHITE%Explode 1%CONTINUE%
 ItemDisplay[opm]: %WHITE%Explode 2%CONTINUE%
 ItemDisplay[ops]: %WHITE%Explode 3%CONTINUE%
-//poison bomb: Strangling Gas, Choking, Rancid
+//poison grenade: Strangling Gas, Choking, Rancid
 ItemDisplay[gpl]: %WHITE%Poison 1%CONTINUE%
 ItemDisplay[gpm]: %WHITE%Poison 2%CONTINUE%
 ItemDisplay[gps]: %WHITE%Poison 3%CONTINUE%
-//scroll/tome
-//ItemDisplay[tsc]: %BLUE%æ %WHITE%Portal{%GRAY%Right Click to spawn Town Portal}%CONTINUE%		//Scroll of Town Portal
-//ItemDisplay[isc]: %RED%æ %WHITE%Identify{%GRAY%Right Click to identify Magical Item}%CONTINUE%		//Scroll of Identify
-ItemDisplay[tsc]: %WHITE%Portal{%WHITE%Use Scroll: Spawn a Town Portal}%CONTINUE%		//Scroll of Town Portal
-ItemDisplay[isc]: %WHITE%Identify{%WHITE%Use Scroll: Identify a Magical Item}%CONTINUE%		//Scroll of Identify
-//ItemDisplay[tbk]: %BLUE%æ %WHITE%Portal Tome%CONTINUE%		//Tome of Town Portal
-//ItemDisplay[ibk]: %RED%æ %WHITE%Identify Tome%CONTINUE%		//Tome of Identify
-//key
-//ItemDisplay[key]: %YELLOW%* %WHITE%%NAME%%CONTINUE%		//Key
-//ranged ammo
-//ItemDisplay[aqv]: î %NAME%%CONTINUE%		//Arrows
-//ItemDisplay[cqv]: %GRAY%(î) %WHITE%%NAME%%CONTINUE%		//Bolts
-//ItemDisplay[aqv]: %NAME% %GRAY%x%WHITE%%QTY%
-//ItemDisplay[cqv]: %NAME% %GRAY%×%WHITE%%QTY%
+//scroll
+ItemDisplay[tsc]: %WHITE%Portal{%WHITE%Use Scroll: Spawn a Town Portal}%CONTINUE%
+ItemDisplay[isc]: %WHITE%Identify{%WHITE%Use Scroll: Identify a Magical Item}%CONTINUE%
+//default display for: Tome of Town Portal(tbk), Tome of Identify(ibk), Key(key), Arrows(aqv), Bolts(cqv)
+//hide arrows/bolts for clvl>6, hide other misc basic items for clvl>23
+ItemDisplay[(aqv OR cqv) NMAG CLVL>6]:
+ItemDisplay[(yps OR wms OR vps OR opl OR opm OR ops OR gpl OR gpm OR gps OR tsc OR isc OR tbk OR ibk OR key) CLVL>23]:
 //<KRB
-
-
 
 
 //Gems
@@ -672,7 +643,7 @@ ItemDisplay[isc]: %WHITE%Identify{%WHITE%Use Scroll: Identify a Magical Item}%CO
 ////skulls
 //ItemDisplay[GEMTYPE=7 GEM<4]: %NAME% %ORANGE%[%GRAY%*%ORANGE%]
 //ItemDisplay[GEMTYPE=7 GEM>3]: %NAME% %ORANGE%[%GRAY%O%ORANGE%]%CONTINUE%
-//KRB> - Shorter / unified gem names, "Flawless Sapphire [O]" -> "(O4) Sapphire"
+//KRB> - Shorter / unified gem names, "Flawless Sapphire [O]" -> "(O4) Sapphire" (fixed non-stack flawless/perfect)
 ItemDisplay[GEMTYPE=1]: %ORANGE%(%PURPLE%O%CONTINUE%
 ItemDisplay[GEMTYPE=2]: %ORANGE%(%WHITE%O%CONTINUE%
 ItemDisplay[GEMTYPE=3]: %ORANGE%(%GREEN%O%CONTINUE%
@@ -2153,7 +2124,7 @@ ItemDisplay[SCEPTER !(wsp OR 9qs OR 9ws OR 7ws) (SK378>2 OR SK121>2 OR SK117>2 O
 
 //Show me quantitiy of all stackables
 //ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>0]: %NAME% %TAN%x %WHITE%%QTY%%CONTINUE%
-//KRB> - Quantity from "x 5" to "x5", colors from TAN/WHITE to GRAY/WHITE to not stand out too much ("x" / ansi "×")
+//KRB> - Quantity from "x 5" to "×5", colors from TAN/WHITE to GRAY/WHITE to not stand out too much ("x" / ansi "×")
 ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>0]: %NAME% %GRAY%×%WHITE%%QTY%%CONTINUE%
 //<KRB
 
@@ -2285,7 +2256,7 @@ ItemDisplay[(ARMOR OR WEAPON) !leg CLVL>30]: {%NAME%}
 //===> scrollsjay <===	@see all info at file bottom
 //===
 //===================================================================
-//=== lastmod	2021-03-30
+//=== lastmod	2021-04-01
 //
 //
 //CREDIT
@@ -2302,14 +2273,14 @@ ItemDisplay[(ARMOR OR WEAPON) !leg CLVL>30]: {%NAME%}
 //
 //
 //CHANGES
-//0013	show more gold (poco)
-//0555	short names for: health pots, mana pots, rejuv (poco)
-//0580	Ignore antidot/key for clvl>30
-//0627	Shorter / unified gem names, "Flawless Sapphire [O]" -> "(O4) Sapphire" (fixed non-stack flawless/perfect)
-//0656	Notify for ALL rune drops, regardless of clvl; RuneNumber is now PRE-pended, e.g. "#15 Hel Rune"
-//0862	Notify for ALL unique/set items
-//2107	Quantity from "x 5" to "x5", colors from TAN/WHITE to GRAY/WHITE to not stand out too much
-//TODO: unify all misc items
-//TODO: notes/recipes on item tooltip too bright/important, better: make grey?
-//TODO: Place of ilvl seems off / should be placed better (it's occasional important, but not most of the time)
-//TODO: x
+//0013	Ignore small gold stacks, progressive system (poco)
+//0558	Short health / mana / rejuv potion names (poco), altered filter syntax
+//0588	Misc basic items - refined naming scheme with some beginner usage info text
+//0646	Shorter / unified gem names, "Flawless Sapphire [O]" -> "(O4) Sapphire" (fixed non-stack flawless/perfect)
+//0675	Notify for ALL rune drops, regardless of clvl; RuneNumber is now PRE-pended, e.g. "#15 Hel Rune"
+//0881	Notify for ALL unique/set items
+//2127	Quantity from "x 5" to "×5", colors from TAN/WHITE to GRAY/WHITE to not stand out too much ("x" / ansi "×")
+//TODO	Check elite rare items not showing for clvl>80
+//TODO	notes/recipes on item tooltip too bright/important, better: make grey?
+//TODO	Place of ilvl seems off / should be placed better (it's occasional important, but not most of the time)
+//TODO	x
