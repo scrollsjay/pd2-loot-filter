@@ -21,15 +21,16 @@ The basic potion naming schema was adopted from [ElPocoBurrito's Filter](https:/
 The changes made were mostly to allow for a briefer appearance of basic items to present a unified look.
 
 #### Cosmetic changes
-- **Potions**: health/mana/rejuv potion names are shortened a lot, e.g. "H2" for "Super Health Potion"
+- **Potions**: very short health/mana/rejuv potion names, e.g. "H2" for "Lesser Healing Potion"
 - **Gems**: short and unified gem names, e.g. "Flawless Sapphire [O]" -> "(O4) Sapphire"
 - **Runes**: adjusted naming with coloring/position of rune number, e.g. "#15 Hel Rune"
 - **Quantity**: darker coloring
+- **Misc basic items**: short naming with beginner-friendly description texts
 
 #### Filter changes
 - **Gold**: show more gold with finer steps in between based on clvl
-- **Keys/Antidots**: are hidden for clvl>30
 - **Notifications** for *all* rune, set and unique item drops
+- **Misc basic items**: are hidden for clvl>30
 
 
 ## Potions
@@ -77,6 +78,15 @@ Adjusted naming with coloring/position of rune number.
 ## Quantity
 
 ![Quantity](img/quantity.jpg?raw=true "Quantity")
+
+
+## Misc basic items
+
+![Misc items](img/misc.item.jpg?raw=true "Misc items")
+Fulminating Potion, Exploding Potion, Oil Potion, Strangling Gas Potion, Choking Gas Potion, Rancid Gas Potion, Antidote Potion, Thawing Potion, Stamina Potion, Scroll of Town Portal, Scroll of Identify
+
+![Misc descriptions](img/misc.desc.jpg?raw=true "Misc descriptions")
+Beginner-friendly description texts for: Antidote Potion, Thawing Potion, Stamina Potion, Scroll of Town Portal, Scroll of Identify
 
 
 

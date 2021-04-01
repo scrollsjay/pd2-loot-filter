@@ -595,7 +595,7 @@ ItemDisplay[vps]: %WHITE%Stamina{%WHITE%Use Potion: Refill Stamina, Infinite Sta
 ItemDisplay[opl]: %WHITE%Explode 1%CONTINUE%
 ItemDisplay[opm]: %WHITE%Explode 2%CONTINUE%
 ItemDisplay[ops]: %WHITE%Explode 3%CONTINUE%
-//poison grenade: Strangling Gas, Choking, Rancid
+//poison grenade: Strangling Gas, Choking Gas, Rancid Gas
 ItemDisplay[gpl]: %WHITE%Poison 1%CONTINUE%
 ItemDisplay[gpm]: %WHITE%Poison 2%CONTINUE%
 ItemDisplay[gps]: %WHITE%Poison 3%CONTINUE%
@@ -605,7 +605,7 @@ ItemDisplay[isc]: %WHITE%Identify{%WHITE%Use Scroll: Identify a Magical Item}%CO
 //default display for: Tome of Town Portal(tbk), Tome of Identify(ibk), Key(key), Arrows(aqv), Bolts(cqv)
 //hide arrows/bolts for clvl>6, hide other misc basic items for clvl>23
 ItemDisplay[(aqv OR cqv) NMAG CLVL>6]:
-ItemDisplay[(yps OR wms OR vps OR opl OR opm OR ops OR gpl OR gpm OR gps OR tsc OR isc OR tbk OR ibk OR key) CLVL>23]:
+ItemDisplay[(yps OR wms OR vps OR opl OR opm OR ops OR gpl OR gpm OR gps OR tsc OR isc OR tbk OR ibk OR key) CLVL>30]:
 //<KRB
 
 
