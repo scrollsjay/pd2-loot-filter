@@ -24,13 +24,17 @@ The changes made were mostly to allow for a briefer appearance of basic items to
 - **Potions**: very short health/mana/rejuv potion names, e.g. "H2" for "Lesser Healing Potion"
 - **Gems**: short and unified gem names, e.g. "Flawless Sapphire [O]" -> "(O4) Sapphire"
 - **Runes**: adjusted naming with coloring/position of rune number, e.g. "#15 Hel Rune"
-- **Quantity**: darker coloring
+- **Quantity**: tighter lettering, darker coloring
 - **Misc basic items**: short naming with beginner-friendly description texts
 
 #### Filter changes
 - **Gold**: show more gold with finer steps in between based on clvl
 - **Notifications** for *all* rune, set and unique item drops
-- **Misc basic items**: are hidden for clvl>30
+- **Misc basic items**: hidden for clvl 31+
+- **Magic items**: (besides good crafts) are hidden for clvl 41+
+- **Normal rare items**: hidden in *Nightmare* / *Hell*
+- **Exceptional rare items**: hidden in *Hell*
+- **Elite rare items**: always shown
 
 
 ## Potions

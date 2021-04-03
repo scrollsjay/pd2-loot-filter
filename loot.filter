@@ -2235,8 +2235,17 @@ ItemDisplay[skzs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHIT
 //HIDE EVERYTHING ELSE
 ItemDisplay[(tkf OR tax OR bkf) ((NMAG AND !INF) OR ((MAG OR RARE) !ETH !ID)) CLVL<31]: %NAME% %GRAY%(%TAN%$%WHITE%%PRICE%%GRAY%){%NAME%}
 ItemDisplay[(9tk OR 9ta OR 9bk) ((NMAG AND !INF) OR ((MAG OR RARE) !ETH !ID)) CLVL<80]: %NAME% %GRAY%(%TAN%$%WHITE%%PRICE%%GRAY%){%NAME%}
-ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE) !ID CLVL<41]: %NAME%
-ItemDisplay[(ARMOR OR WEAPON) (EXC OR ELT) (MAG OR RARE) !ID (CLVL>40 AND CLVL<80)]: %NAME%
+//ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE) !ID CLVL<41]: %NAME%
+//ItemDisplay[(ARMOR OR WEAPON) (EXC OR ELT) (MAG OR RARE) !ID (CLVL>40 AND CLVL<80)]: %NAME%
+//KRB> - Show rare/set/unique armor/weapon tier dependent on difficulty (magic items for clvl<41)
+//normal	: normal + excellent + elite
+//nightmare	: excellent + elite
+//normal	: elite
+ItemDisplay[(ARMOR OR WEAPON) MAG !ID CLVL<41]: %NAME%
+ItemDisplay[(ARMOR OR WEAPON) (NORM OR EXC OR ELT) (RARE OR SET OR UNI) !ID DIFF=0]: %NAME%
+ItemDisplay[(ARMOR OR WEAPON) (EXC OR ELT) (RARE OR SET OR UNI) !ID DIFF=1]: %NAME%
+ItemDisplay[(ARMOR OR WEAPON) ELT (RARE OR SET OR UNI) !ID DIFF=2]: %NAME%
+//<KRB
 ItemDisplay[(SOR OR WAND OR SCEPTER OR STAFF OR DRU OR BAR OR NEC OR (SIN !(NORM OR 9ar OR 9wb OR 9xf))) NMAG CLVL<80]: %NAME% %GRAY%(%TAN%$%WHITE%%PRICE%%GRAY%){%NAME%}
 ItemDisplay[((CHEST OR HELM OR SHIELD) OR (WEAPON AND !THROWING)) (EXC OR ELT) NMAG !ETH !INF !SOCK=1 CLVL<80]: %NAME%{%NAME%}
 ItemDisplay[(CIRC OR HELM) NORM NMAG !ETH !INF SOCK=3 CLVL<80]: %NAME%{%NAME%}
@@ -2259,7 +2268,7 @@ ItemDisplay[(ARMOR OR WEAPON) !leg CLVL>30]: {%NAME%}
 //===> scrollsjay <===	@see all info at file bottom
 //===
 //===================================================================
-//=== lastmod	2021-04-01
+//=== lastmod	2021-04-03
 //
 //
 //CREDIT
@@ -2283,6 +2292,7 @@ ItemDisplay[(ARMOR OR WEAPON) !leg CLVL>30]: {%NAME%}
 //0675	Notify for ALL rune drops, regardless of clvl; RuneNumber is now PRE-pended, e.g. "#15 Hel Rune"
 //0881	Notify for ALL unique/set items
 //2127	Quantity from "x 5" to "×5", colors from TAN/WHITE to GRAY/WHITE to not stand out too much ("x" / ansi "×")
+//2240	Show rare/set/unique armor/weapon tier dependent on difficulty (magic items for clvl<41)
 //TODO	Check elite rare items not showing for clvl>80
 //TODO	notes/recipes on item tooltip too bright/important, better: make grey?
 //TODO	Place of ilvl seems off / should be placed better (it's occasional important, but not most of the time)
