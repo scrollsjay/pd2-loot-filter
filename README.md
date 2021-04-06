@@ -94,4 +94,10 @@ Beginner-friendly description texts for: Antidote Potion, Thawing Potion, Stamin
 
 
 
+# Contact
+
+Constructive feedback is always welcome. Drop me a message [via reddit.com](https://reddit.com/message/compose/?to=scrollsjay).
+
+
+
 <!-- inline image linking: ![Alt Text](img/name.jpg?raw=true "Title") -->
